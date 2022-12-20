@@ -10,13 +10,12 @@ export class AppComponent {
 
   // url = `WIFI:S:Super Slow Wifi;T:WPA;P:password;H:false;`;
   url: string = 'https://www.thedirtydoves.com';
-  foreground: string = '#000000ff';
-  background: string = '#ffffffff';
+  foreground: string = '#000000';
+  background: string = '#ffffff';
   imageUrl: string = '';
   imageHeight: number = 75;
   imageWidth: number = 75;
   elementType: QRCodeElementType = 'canvas';
-  imageFile: File | null = null;
 
   onImageUpload(event: any) {
     const file = event.target.files[0];

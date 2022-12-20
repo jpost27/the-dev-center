@@ -12,31 +12,29 @@
 </div>
 <div>
   <label>Foreground Color</label>
-  <input [(ngModel)]="foreground" />
+  <input type="color" [(ngModel)]="foreground" />
 </div>
 <div>
   <label>Background Color</label>
-  <input [(ngModel)]="background" />
+  <input type="color" [(ngModel)]="background" />
 </div>
 <div>
   <label>Image Url</label>
   <input [(ngModel)]="imageUrl" />
   <input type="file" id="img" accept="image/*" (change)="onImageUpload($event)">
 </div>
-<div>
-  <label>Image Height</label>
-  <input [(ngModel)]="imageHeight" />
-</div>
-<div>
-  <label>Image Width</label>
-  <input [(ngModel)]="imageWidth" />
-</div>
+<ng-container *ngIf="!!imageUrl">
+  <div>
+    <label>Image Height</label>
+    <input type="number" [(ngModel)]="imageHeight" />
+  </div>
+  <div>
+    <label>Image Width</label>
+    <input type="number" [(ngModel)]="imageWidth" />
+  </div>
+</ng-container>
 <div class="downloadButton">
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="saveAsImage(parent)"
-  >
+  <button mat-raised-button color="primary" (click)="saveAsImage(parent)">
     Download QR Code Image
   </button>
 </div>
